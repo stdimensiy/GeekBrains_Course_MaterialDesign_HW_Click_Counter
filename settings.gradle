@@ -1,0 +1,2 @@
+rootProject.name = "Click Counter"
+include ':app'
