@@ -32,4 +32,16 @@ class MainActivity : AppCompatActivity(), MainView {
 
         }
     }
+
+    override fun setButtonOneText(text: String) {
+        vb?.btnCounter1?.text = text
+    }
+
+    override fun setButtonTwoText(text: String) {
+        vb?.btnCounter2?.text = text
+    }
+
+    override fun setButtonThreeText(text: String) {
+        vb?.btnCounter3?.text = text
+    }
 }
