@@ -1,14 +1,14 @@
 package ru.vdv.myapp.clickcounter
 
 class Model {
-    val counters = mutableListOf<Int>(0, 0, 0)
+    private val counters = mutableListOf(0, 0, 0)
 
     /**
      * Метод возвращает текущее значение счетчика
      * @param index (Int) идентификатор счетчика (индекс позиции счетчика в коллекции)
      * @return текущее значение счетчика (Int)
      */
-    fun getCurrent(index: Int): Int {
+    private fun getCurrent(index: Int): Int {
         return counters[index]
     }
 
