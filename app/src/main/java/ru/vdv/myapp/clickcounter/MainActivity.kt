@@ -1,14 +1,15 @@
 package ru.vdv.myapp.clickcounter
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import moxy.MvpAppCompatActivity
+import moxy.ktx.moxyPresenter
 import ru.vdv.myapp.clickcounter.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : MvpAppCompatActivity(), MainView {
 
     private var _vb: ActivityMainBinding? = null
     private val vb get() = _vb!!
-    private val presenter = MainPresenter(this)
+    private val presenter by moxyPresenter { MainPresenter(Model()) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

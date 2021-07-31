@@ -1,7 +1,8 @@
 package ru.vdv.myapp.clickcounter
 
-class MainPresenter(private val view: MainView) {
-    private val model = Model()
+import moxy.MvpPresenter
+
+class MainPresenter(private val model: Model) : MvpPresenter<MainView>() {
 
     /**
      * Метод слоя Presenter
@@ -10,7 +11,7 @@ class MainPresenter(private val view: MainView) {
      */
     fun counterOneClick() {
         val nextValue = model.next(0)
-        view.setButtonOneText(nextValue.toString())
+        viewState.setButtonOneText(nextValue.toString())
     }
 
     /**
@@ -20,7 +21,7 @@ class MainPresenter(private val view: MainView) {
      */
     fun counterTwoClick() {
         val nextValue = model.next(1)
-        view.setButtonTwoText(nextValue.toString())
+        viewState.setButtonTwoText(nextValue.toString())
     }
 
     /**
@@ -30,6 +31,6 @@ class MainPresenter(private val view: MainView) {
      */
     fun counterThreeClick() {
         val nextValue = model.next(2)
-        view.setButtonThreeText(nextValue.toString())
+        viewState.setButtonThreeText(nextValue.toString())
     }
 }
