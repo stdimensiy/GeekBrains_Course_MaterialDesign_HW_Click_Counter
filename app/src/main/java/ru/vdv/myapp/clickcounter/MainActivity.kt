@@ -19,9 +19,10 @@ class MainActivity : AppCompatActivity(), MainView {
             presenter.counterClick(it.id)
         }
 
-        vb?.btnCounter1?.setOnClickListener(listener)
-        vb?.btnCounter2?.setOnClickListener(listener)
-        vb?.btnCounter3?.setOnClickListener(listener)
+        //vb?.btnCounter1?.setOnClickListener(listener)
+        vb?.btnCounter1?.setOnClickListener { presenter.counterOneClick() }
+        vb?.btnCounter2?.setOnClickListener { presenter.counterTwoClick() }
+        vb?.btnCounter3?.setOnClickListener { presenter.counterThreeClick() }
     }
 
     override fun setButtonText(index: Int, text: String) {
